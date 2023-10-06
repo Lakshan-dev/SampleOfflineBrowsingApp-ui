@@ -13,6 +13,12 @@ export const PostRequests = () => {
         });
     };
 
+    const removePost = async (id) => {
+        return await api.delete(`/post/${id}`).then(response=>{
+            return response;
+        });
+    };
+
     const getUserData = async () => {
         return await api.get('/user').then(response=>{
             return response;
@@ -25,5 +31,11 @@ export const PostRequests = () => {
         });
     };
 
-    return {getPostData, addPost, getUserData, addUser};
+    const removeUser = async (id) => {
+        return await api.delete(`/user/${id}`).then(response=>{
+            return response;
+        });
+    };
+
+    return {getPostData, addPost, getUserData, addUser, removePost, removeUser};
 }
