@@ -11,7 +11,7 @@ import {
     ModalFooter,
     Button,
     useDisclosure,
-    Input, Textarea
+    Input, Textarea, Divider
 } from "@nextui-org/react";
 import {MailIcon} from "@nextui-org/shared-icons";
 import SkeletonLoader from "@/components/assets/Skeleton";
@@ -106,7 +106,7 @@ export default function PostTable() {
                     </tbody>
                 </table>
             ))}
-
+            <Divider className={'my-8'}/>
             <div className={'flex justify-between'}>
                 <h1 className={'text-2xl mb-8 inline-block'}>Registered Users Details</h1>
                 <Button onClick={onOpenUser}>REGISTER</Button>
