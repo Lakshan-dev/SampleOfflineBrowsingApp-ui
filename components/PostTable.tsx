@@ -37,7 +37,7 @@ export default function PostTable() {
         setIsLoading(true);
         try {
             const response = await getPostData();
-            setPostData(response.data.data);
+            setPostData(response.data);
             setIsLoading(false);
         }catch (error){
             setIsLoading(false);
@@ -49,7 +49,7 @@ export default function PostTable() {
         setIsLoading(true);
         try {
             const response = await getUserData();
-            setUserData(response.data.data);
+            setUserData(response.data);
             setIsLoading(false);
         }catch (error){
             setIsLoading(false);

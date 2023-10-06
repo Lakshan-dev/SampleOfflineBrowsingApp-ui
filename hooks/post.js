@@ -2,9 +2,10 @@ import api from "../lib/axios";
 
 export const PostRequests = () => {
     const getPostData = async () => {
-        return await api.get('/post').then(response=>{
-            return response;
-        });
+        return await fetch(`${process.env.PUBLIC_BACKEND_DOMAIN}/post`).then(response=>response.json())
+            .then(data=> {
+                return data
+            })
     };
 
     const addPost = async (postForm) => {
@@ -14,15 +15,17 @@ export const PostRequests = () => {
     };
 
     const removePost = async (id) => {
-        return await api.delete(`/post/${id}`).then(response=>{
-            return response;
-        });
+        return await fetch(`${process.env.PUBLIC_BACKEND_DOMAIN}/post/${id}`, {method:'DELETE'}).then(response=>response.json())
+            .then(data=> {
+                return data;
+            })
     };
 
     const getUserData = async () => {
-        return await api.get('/user').then(response=>{
-            return response;
-        });
+        return await fetch(`${process.env.PUBLIC_BACKEND_DOMAIN}/user`).then(response=>response.json())
+            .then(data=> {
+                return data
+            });
     };
 
     const addUser = async (userData) => {
@@ -32,9 +35,10 @@ export const PostRequests = () => {
     };
 
     const removeUser = async (id) => {
-        return await api.delete(`/user/${id}`).then(response=>{
-            return response;
-        });
+        return await fetch(`${process.env.PUBLIC_BACKEND_DOMAIN}/user/${id}`,{method:'DELETE'}).then(response=>response.json())
+            .then(data=> {
+                return data
+            });
     };
 
     return {getPostData, addPost, getUserData, addUser, removePost, removeUser};
