@@ -138,6 +138,8 @@ export default function PostTable() {
                                             </CardHeader>
                                             <Divider/>
                                             <CardBody>
+                                                <h3 className={'m-2'}>{post.subTitle}</h3>
+                                                <hr/>
                                                 <p>{post.body}</p>
                                             </CardBody>
                                         </Card>
