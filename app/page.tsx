@@ -7,7 +7,8 @@ import {useEffect} from "react";
 export default function Home() {
 
     useEffect(()=>{
-        if ('serviceWorker' in navigator){
+        if ('serviceWorker' in navigator){ //check, running browser support services workers
+            //register a service worker
             navigator.serviceWorker
                 .register('/service-worker.js', {scope: '/'}) //{ scope: '/' }) can specify other pages
                 .then(registration=> {
